@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learn all about planets</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- All Right Reserved to Sid Joshi --> 	
+<style type="text/css">
+	body{
+		background: black;
+		font-family: 'Varela Round', sans-serif;
+	}
+    .form-inline {
+        display: inline-block;
+    }
+	.navbar-header.col {
+		padding: 0 !important;
+	}	
+	.navbar {
+		color: #fff;
+		background: grey;
+		padding: 5px 16px;
+		border-radius: 0;
+		border: none;
+		box-shadow: 0 0 4px rgba(0,0,0,.1);
+	}
+	.navbar img {
+		border-radius: 50%;
+		width: 36px;
+		height: 36px;
+		margin-right: 10px;
+	}
+	.navbar .navbar-brand {
+		color: #efe5ff;
+		padding-left: 0;
+		padding-right: 50px;
+		font-size: 24px;		
+	}
+	.navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
+		color: #fff;
+	}
+	.navbar .navbar-brand i {
+		font-size: 25px;
+		margin-right: 5px;
+	}
+	.search-box {
+        position: relative;
+    }	
+    .search-box input {
+        padding-right: 35px;
+		min-height: 38px;
+		border: none;
+		background: #faf7fd;
+        border-radius: 3px !important;
+    }
+	.search-box input:focus {		
+		background: #fff;
+		box-shadow: none;
+	}
+	.search-box .input-group-addon {
+        min-width: 35px;
+        border: none;
+        background: transparent;
+        position: absolute;
+        right: 0;
+        z-index: 9;
+        padding: 10px 7px;
+		height: 100%;
+    }
+    .search-box i {
+        color: #a0a5b1;
+		font-size: 19px;
+    }
+	.navbar .nav-item i {
+		font-size: 18px;
+	}
+	.navbar .nav-item span {
+		position: relative;
+		top: 3px;
+	}
+	.navbar .nav > li a {
+		color: #efe5ff;
+		padding: 8px 15px;
+		font-size: 14px;		
+	}
+	.navbar .nav > li a:hover, .navbar .nav > li a:focus {
+		color: #fff;
+		text-shadow: 0 0 4px rgba(255,255,255,0.3);
+	}
+	.navbar .nav > li > a > i {
+		display: block;
+		text-align: center;
+	}
+	.navbar .dropdown-item i {
+		font-size: 16px;
+		min-width: 22px;
+	}
+    .navbar .dropdown-item .material-icons {
+        font-size: 21px;
+        line-height: 16px;
+        vertical-align: middle;
+        margin-top: -2px;
+    }
+	.navbar .nav-item.open > a, .navbar .nav-item.open > a:hover, .navbar .nav-item.open > a:focus {
+		color: #fff;
+		background: none !important;
+	}
+	.navbar .dropdown-menu {
+		border-radius: 1px;
+		border-color: #e5e5e5;
+		box-shadow: 0 2px 8px rgba(0,0,0,.05);
+	}
+	.navbar .dropdown-menu li a {
+		color: #777 !important;
+		padding: 8px 20px;
+		line-height: normal;
+	}
+	.navbar .dropdown-menu li a:hover, .navbar .dropdown-menu li a:focus {
+		color: #333 !important;
+		background: transparent !important;
+	}
+	.navbar .nav .active a, .navbar .nav .active a:hover, .navbar .nav .active a:focus {
+		color: #fff;
+		text-shadow: 0 0 4px rgba(255,255,255,0.2);
+		background: transparent !important;
+	}
+	.navbar .nav .user-action {
+		padding: 9px 15px;
+	}
+	.navbar .navbar-toggle {
+		border-color: #fff;
+	}
+	.navbar .navbar-toggle .icon-bar {
+		background: #fff;
+	}
+	.navbar .navbar-toggle:focus, .navbar .navbar-toggle:hover {
+		background: transparent;
+	}
+	.navbar .navbar-nav .open .dropdown-menu {
+		background: #faf7fd;
+		border-radius: 1px;
+		border-color: #faf7fd;
+		box-shadow: 0 2px 8px rgba(0,0,0,.05);
+	}
+	.navbar .divider {
+		background-color: #e9ecef !important;
+	}
+	.content{
+		width: 90%;
+		margin: 30px auto 30px;
+	}
+	.footer {
+    padding: 20px 0 30px !important;
+    color: #999;
+    background-color: #1f1f1f;
+    text-align: center;
+}
+	@media (min-width: 1200px){
+		.form-inline .input-group {
+			width: 350px;
+			margin-left: 30px;
+		}
+	}
+	@media (max-width: 1199px){
+		.navbar .nav > li > a > i {
+			display: inline-block;			
+			text-align: left;
+			min-width: 30px;
+			position: relative;
+			top: 4px;
+		}
+		.navbar .navbar-collapse {
+			border: none;
+			box-shadow: none;
+			padding: 0;
+		}
+		.navbar .navbar-form {
+			border: none;			
+			display: block;
+			margin: 10px 0;
+			padding: 0;
+		}
+		.navbar .navbar-nav {
+			margin: 8px 0;
+		}
+		.navbar .navbar-toggle {
+			margin-right: 0;
+		}
+		.input-group {
+			width: 100%;
+		}
+	}
+</style>
+</head> 
+<body>
+<nav class="navbar navbar-inverse navbar-expand-xl navbar-dark">
+	<div class="navbar-header d-flex col">
+		<a class="navbar-brand" href="#"><i class="fa fa-cube"></i><b>Solar System Explained</b></a>  		
+		<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
+			<span class="navbar-toggler-icon"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	</div>
+	<!-- Collection of nav links, forms, and other content for toggling -->
+
+	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">		
+		<form class="navbar-form form-inline">
+		</form>
+		<ul class="nav navbar-nav navbar-right ml-auto">
+			<li class="nav-item active"><a href="#sun" class="nav-link"><span>सूर्य(SUN)</span></a></li>
+			<li class="nav-item active"><a href="#budh" class="nav-link"><span>बुध (MERCURY)</span></a></li>
+			<li class="nav-item"><a href="#sukra" class="nav-link"><span>शुक्र (VENUS)</span></a></li>
+			<li class="nav-item"><a href="#prithvi" class="nav-link"><span>पृथ्वी (EARTH)</span></a></li>
+			<li class="nav-item"><a href="#mangal" class="nav-link"><span>मंगल (MARS)</span></a></li>
+			<li class="nav-item"><a href="#guru" class="nav-link"><span>बृहस्पति (JUPITER)</span></a></li>
+			<li class="nav-item"><a href="#shani" class="nav-link"><span>शनि (SATURN)</span></a></li>
+			<li class="nav-item"><a href="#arun" class="nav-link"><span>अरुण (URANUS)</span></a></li>		
+			<li class="nav-item"><a href="#varun" class="nav-link"><span>वरुण (NEPTUNE)</span></a></li>
+		</ul>
+	</div>
+</nav>
+<div id="head">
+</br></br>
+<h2> <font color="silver"><center>सौर मंडल क्या है ??</center></font> </h2>
+<center><img src="https://cdn.mos.cms.futurecdn.net/vFczgcmueNuSmEKJmPYDTM-320-80.jpg"></center>
+ <div class="content">
+ <font color="grey"><p> <b>ब्रह्मांड में लगभग 100 अरब या उससे भी ज्यादा मंदकिनी (Galaxy) हैं और आकाशगंगा या मिल्की वे या क्षीरमार्ग हमारी गैलेक्सी को कहते हैं, जिसमें पृथ्वी और हमारा सौर मण्डल स्थित है। सूर्य के चारो ओर चक्कर लगाने वाले विभिन्न ग्रहों, छुद्र ग्रहों, धूमकेतुओं, उल्काओं तथा अन्य आकाशीय पिंडो के समूह को सौरमंडल कहते हैं। सौरमंडल में सूर्य का प्रभुत्व है, क्युकी सौरमंडल निकाय के द्रव का लगभग 99.999 द्रव सूर्य में निहित है। सूर्य समस्त सौरमंडल का ऊर्ज़ा स्रोत है। </b></p></div></font>
+<div id="sun" class="content">
+</br>
+	<h2> <font color="silver"><center>#सूर्य (SUN)</center></font> </h2>
+	<center><img src="images/sun.jpg" width="400" height="300"></center>
+	 <font color="grey"><p> <b> सूर्य अथवा सूरज सौरमंडल के केन्द्र में स्थित एक तारा जिसके चारों तरफ पृथ्वी और सौरमंडल के अन्य अवयव घूमते हैं। सूर्य , हमारे पृथ्वी के जलवायु और मौसम के लिए ज़िम्मेदार है। सूर्य के ध्रुवों और भूमध्य रेखा के बीच व्यास में केवल 10 किमी का अंतर होता है। सूर्य का औसत त्रिज्या 695,508 किमी है।
+</br>
+इसकी मजबूत गुरुत्वाकर्षण शक्ति के कारण अन्य ग्रह इसके चक्कर लगाते हैं। सूर्य से पृथ्वी की औसत दूरी लगभग 14,96,00,000 किलोमीटर है तथा सूर्य से पृथ्वी पर प्रकाश को आने में 8 मिनट 19 सेकेण्ड का समय लगता है।ऊर्जा का यह शक्तिशाली यह एक गैसीय गोला है जिसमे 71% हाइड्रोजन, 26.5% हीलियम एवं 2.5% अन्य तत्व हैं। सूर्य से निकली ऊर्जा का छोटा सा भाग ही पृथ्वी पर पहुँचता है। इसी ऊर्जा से प्रकाश-संश्लेषण (photosynthesis) नामक एक महत्वपूर्ण जैव-रासायनिक अभिक्रिया होती है जिससे पेेेड़-पौधे अपना भोजन तैयार करतेे हैं। </b></p>
+<p><b>#Special Points </b></p> </br>
+<p> 1. अलास्का में मई से जुलाई के बीच में सूरज नहीं डूबता है। </p>
+<p> 2. फिनलैंड में भी करीब 73 दिनों तक सूरज नहीं डूबता है। </p>
+<p> 3. धरती पर 1 वर्ष में लगभग 5 बार सूर्य ग्रहण होता ही है </p>
+<p> 4.  सूर्य कि गुरुत्वाकर्षण शक्ति के कारण ही सौरमंडल के सारे ग्रह सूर्य की परिक्रमा करते हैं </p>
+<p> 5. सूर्य की आकाश गंगा के केंद्र से दूरी 27,000 प्रकाश वर्ष है। </p>
+<p> 6. सूर्य पर कुछ भी ठोस नही है। सूर्य केवल एक गैस का गोला है। </p></font>
+</div>
+<div id="budh" class="content">
+	</br>
+	<h2> <font color="silver"><center> 1. बुध (MERCURY)</center></font> </h2>
+<center><img src="images/budh.jpg"></center>
+ <font color="grey"> <p> <b> सूर्य के सबसे निकट और सबसे छोटा ग्रह बुध है। इसका ताप बहुत अच्छा होता है। इस ग्रह पर वायुमंडल व जल नहीं है। बुध अधिकांश समय तक सूर्य की चकाचौंध में छिपा रहता है अतः उसे देखना अत्यंत कठिन है। तथापि सूर्योदय से तुरंत पूर्व व सूर्यास्त के तुरंत पश्चात इसे क्षितिज रेखा पर देखा जा सकता है। </b></p>
+<br> <p><b>#Special Points </b></p> </br>
+<p> 1. यह सूर्य के सबसे निकट है (nearest to the sun).</p>
+<p> 2. यह सबसे छोटा ग्रह है (smallest planet). </p>
+<p> 3. यह सूर्य के चारों ओर 88 दिन में एक बार चक्कर (rotation) लगाता है.</p>
+<p> 4. यहाँ दिन अत्यधिक गर्म और रातें बर्फीली होती हैं. </p>
+<p> 5. सूर्य के सबसे निकट स्थित होने के बाबजूद बुध सौर्य मंडल के सबसे गर्म ग्रहों में दूसरे स्थान पर है। </p>
+<p> 6. बुध ग्रह का कोई उपग्रह नहीं है। </p>
+<p> 7. इसका गुरुत्वाकर्षण (gravity) पृथ्वी का 3/8 भाग है. </p>
+<p> 8. जब पृथ्वी ( Earth) के 58 दिन पूरे होते हैं तो बुध ग्रह का एक दिन पूरा होता है </p>
+</font>
+</div>
+<div id="sukra" class="content">
+	</br>
+	<h2> <font color="silver"><center> 2. शुक्र (VENUS)</center></font> </h2>
+<center><img src="images/venus.jpg" width="400" height="250"></center>
+ <font color="grey"><p> <b> यह ग्रह पृथ्वी के सबसे निकट है। रात के समय आसमान में चन्द्रमा के बाद सबसे चमकता हुआ आकाशीय पिंड शुक्र ही है। सुबह के समय यह पूर्वी आसमान में और शाम के समय पश्चिमी आसमान में दिखाई देता है इसलिए इसे <big>भोर का तारा </big> भी कहते हैं। 
+</br> शुक्र ग्रह को पृथ्वी की बहन भी कहा जाता है क्योंकि दोनों के आकार में काफी समानता पाई जाती है। शुक्र ग्रह का व्यास पृथ्वी के व्यास का 95 प्रतिशत तथा वजन में पृथ्वी का 80 प्रतिशत है। शुक्र ग्रह पर सल्फ्यूरिक एसिड के बादलों की कई किलोमीटर मोटी परते हैं।
+</br>
+जो इसकी सतह को पूरी तरह से ढक लेती है इस कारण से शुक्र ग्रह की सतह देखी नहीं जा सकती। शुक्र ग्रह का वातावरण मुख्य रूप से कार्बन डाइऑक्साइड का बना हुआ है जो कि ग्रीन हाउस प्रभाव पैदा करती है जिससे इसके सूर्य की तरफ वाले भाग का तापमान 462 डिग्री सेल्सियस तक पहुंच जाता है। </b></p>
+<br> <p><b>#Special Points </b></p> </br>
+<p> 1. शुक्र ग्रह सौर मंडल का सबसे गर्म ग्रह है। </p>
+<p> 2. यह “शाम का तारा- evening star” और “सुबह का तारा- morning star” के रूप में ज्यादा प्रसिद्ध है. </p>
+<p> 3. इस ग्रह का द्रव्यमान तथा आकार पृथ्वी के सामान होने के कारण इसे पृथ्वी की बहन(Sister planet of earth) भी कहा जाता है। </p>
+<p> 4. शुक्र का घुर्णन (Rotation) विचित्र है, यह काफी धीमा है।  इसका एक दिन 243 पृथ्वी के दिन के बराबर है जो कि शुक्र के एक वर्ष से कुछ ज्यादा है।</p>
+<p> 5. शुक्र ग्रह का कोई उपग्रह नहीं है </p>
+<p> 6. यह ग्रहों में पृथ्वी के सबसे निकटतम (Nearest to the Earth) है. </p>
+<p> 7. इसके चारों और Sulfuric Acid के जमे हुए बादल हैं. </p>
+</font>
+</div>
+<div id="prithvi" class="content">
+	</br>
+	<h2> <font color="silver"><center> 3. पृथ्वी (EARTH)</center></font> </h2>
+<center><img src="images/earth.jpg" width="400" height="300"></center>
+ <font color="grey"> <p> <b> सूर्य से दूरी में तीसरे स्थान पर पृथ्वी ग्रह आता है। ये <font color="blue">नीला ग्रह </font>भी है जिसमें पानी की मात्रा बहुत अधिक है। ये एकमात्र ग्रह हैं जहां पर जीवन है। पृथ्वी ग्रह अकेला ग्रह है जिसका  अंग्रेजी नाम ग्रीक / रोमन पौराणिक कथाओं से नहीं है।
+
+इसकी सूर्य से जो दूरी है वह एक इकाई मानी जाती है जिस खगौलीय एकाई या AU (Astronomical Unit) कहते हैं। 1 AU का मतलब है 15 करोड़ किलोमीटर। </b></p> 
+<pre>1 AU in KM = 149,598,000 kilometers</pre>
+<p> <b>पृथ्वी की आयु  4.5 अरब वर्ष से लेकर 4.6 अरब वर्ष है लेकिन पृथ्वी की सबसे पूरानी चट्टान 4 अरब वर्ष पूरानी है, 3 अरब वर्ष से पूराने चट्टाने दूर्लभ है। जीवित प्राणियो के जीवाश्म की आयु 3.9अरब वर्ष से कम है।<br>
+
+जीवन के प्रारंभ के समय के कोई प्रमाण उपलब्ध नही है। पृथ्वी की सतह का 70% हिस्सा पानी से ढंका है। पृथ्वी अकेला ग्रह है जिस पर पानी द्रव अवस्था मे सतह पर उपलब्ध है।
+
+<p>पृथ्वी के वातावरण मे 78% नायट्रोजन, 21% आक्सीजन,और कुछ मात्रा मे आर्गन,कार्बन डाय आक्साईड और जल बाष्प है।</p>
+
+पृथ्वी की एक ही प्राकृतिक उपग्रह है: चन्द्रमा। इसके अलावा हजारो की संख्या मे क्रत्रिम उपग्रह है। क्षुद्रग्रह 3753 क्रुथेन और 2002ए ए29 पृथ्वी के साथी है। जो पृथ्वी के साथ सूर्य की परिक्रमा करते है।</b></p>
+
+</br>
+<p> <b> #Special Points </b></p>
+<p> 1. पृथ्वी पर एक दिन 24 घन्टे का होता है </p>
+<p> 2. पृथ्वी की त्रिज्या – 6400 कि.मी.</p>
+<p> 3. पृथ्वी अपने अक्ष पर 23 डिग्री झुकी है </p>
+<p> 4. पृथ्वी के मध्य से चन्द्रमा के मध्य तक कि दूरी 384,403 कि.मी. हैं
+</p>
+<p> 5. पृथ्वी अपनी धुरी पर घूमती है यह कॉपरनिकस ने सिद्ध किया था</p>
+<p> 6. पृथ्वी 107160 कि.मी. प्रति घंटे की गति (speed per hour) से 365 दिन, 6 घंटे, 48 मि. एवं 46 सेकंड में सूर्य का चक्कर लगाती है. </p>
+<p> 7. 21 June को कर्क रेखा पर सूर्य की किरणें 90° लम्बवत् पड़ती हैं, अतः इस तिथि को उत्तरी गोलार्ध में दिन की अवधि सर्वाधिक लम्बी होती है जिसे Summer Solstice कहा जाता है.</p>
+<p> 8. इसी प्रकार 22 दिसम्बर को मकर रेखा पर सूर्य की किरणें लम्बवत् पड़ती हैं जिसे Winter Solstice कहा जाता है और इस तिथि को दक्षिणी गोलार्ध (South Hemisphere) में दिन की अवधि सर्वाधिक लम्बी होती है.</p>
+<p> 9. पृथ्वी का 71% भाग जलमंडल (hydrosphere) एवं 29% भाग स्थलमंडल (lithosphere) है. </p> </font>
+</div>
+
+<div id="mangal" class="content">
+	</br>
+	<h2> <font color="silver"><center> 4. मंगल (MARS)</center></font> </h2>
+<center><img src="images/mars.jpg" width="400" height="300"></center>
+<br>
+ <font color="grey"> <p> <b> मंगल  सौरमंडल में सूर्य से चौथा ग्रह है। पृथ्वी से देखने पर ये ग्रह एकदम लाल दिखाई पड़ता है। इस ग्रह की सतह जो कि चट्टानों और रेत के कणों से बनी है।
+
+सौरमंडल (Solar System) के ग्रह दो तरह के होते हैं – “स्थलीय ग्रह (Surface Planet) ” जिनमें ज़मीन होती है और “गैसीय ग्रह (Gaseous Planet) ” जिनमें अधिकतर गैस ही गैस है। पृथ्वी की तरह, मंगल भी एक स्थलीय धरातल वाला ग्रह है। </b></p> 
+<p><b> मंगल की सतह काफी पूरानी है और क्रेटरो से भरी हुयी है, लेकिन वहां पर कुछ नयी घाटीया, पहाड़ीयां और पठार भी है। यह सब जानकारीयां मगंल भेजे गये यानो ने दी है।</b> </p>
+
+<p> <b>मंगल का वातावरण पतला है। वातावरण मे 95.3% कार्बन डाय आक्साईड, 2.7% नायट्रोजन, 1.6% आर्गन ,0.15 % आक्सीजन और 0.03% जल बाष्प है।</b></p></font>
+
+</br>
+<font color="grey"> <p> <b> #Special Points </b></p>
+<p> 1. यह सौरमंडल में सूर्य से चौथे स्थान पर स्थित है. </p>
+<p> 2. इसके दो उपग्रह हैं – फोबस और डीमोस (Phobos and Deimos) </p>
+<p> 3.  सबसे ऊंचा पर्वत “निक्स ओलम्पिया” (Nix Olympia)  है जो एवरेस्ट से भी तीन गुना ऊँचा है. </p>
+<p> 4.  मंगल ग्रह को “फेरिक आक्साइड” की उपस्थिति के कारण <font color="red">“लाल ग्रह”(red planet) </font>कहा जाता है </p>
+<p> 5. मंगल के दो ध्रुव (poles) हैं तथा यहाँ भी पृथ्वी की भांति ऋतु परिवर्तन (climate change) होता है. ऐसा पृथ्वी की तरह इसकी धुरी झुकी होने के कारण होता है. </p>
+<p> 6.  मंगल का गुरुत्वबल – 3.7 m/s2 है </p>
+<p> 7. मंगल को पृथ्वी से नग्न आँखों से देखा जा सकता है
+</p>
+</font> 
+</div>
+<div id="guru" class="content">
+	</br>
+	<h2> <font color="silver"><center> 5. बृहस्पति (JUPITER)</center></font> </h2>
+<center><img src="images/guru.jpg" width="400" height="300"></center>
+<br><br>
+
+ <font color="grey"> <p> <b> बृहस्पति सूर्य से पांचवा और सबसे बड़ा ग्रह है। यह महाकाय ग्रह बाकी सभी ग्रहो के कुल द्रव्यमान का दूगुना है। बृहस्पति का द्रव्यमान पृथ्वी के द्रव्यमान का 318 गुणा है। </b></p>
+
+<p> <b> इसकी विशालता का अंदाजा इसी से लगाया जा सकता है कि इसका आकार हमारी धरती से 1300 गुना बड़ा है। इस ग्रह को सबसे विशाल गैसों वाला ग्रह भी कहते हैं। यह गैस से बना एक ग्रह है जिसकी सतह के बारे में वैज्ञानिक कुछ नहीं जानते हैं। इसके वातावरण में गैसों के अलाबा कुछ नहीं है।  </b></p>
+<p> <b> इस ग्रह का निर्माण मुख्या रूप से हाइड्रोजन एवं हीलियम से हुआ है। इस ग्रह की सतह पर <font color="red"> विशाल रक्तिम धब्बा (great red spot) </font>देखा गया है। ऐसा अन्य किसी ग्रह पर नहीं है। अधिक द्रव्यमान होने के कारण यह पास से गुजरने वाले आकाशीय पिंड पर प्रबल गुरुत्वाकर्षण बल आरोपित करता है। यह गुरुत्वाकर्षण बल इतना शक्तिशाली होता है की इसके पास से गुजरने वाले कुछ आकाशीय पिंड अपने मार्ग से विचलित भी हो जाते हैं। कुछ धूम केतु तो टूट तक जाते हैं। </b></p></font>
+
+
+</br>
+<font color="grey"> <p> <b> #Special Points </b></p>
+<p>  1.  यह सौरमंडल का सबसे बड़ा ग्रह है।</p>
+<p> 2.  यह सूर्य से पाँचवे स्थान पर है । </p>
+<p> 3. बृहस्पति की त्रिज्या - 69,911 कि.मी. है ।</p>
+<p> 4. बृहस्पति का गुरुत्वबल - 24.79 m/s2 है इसका घनत्व (Density) पृथ्वी के घनत्व का एक चौथाई है। </p>
+<p> 5. इसका द्रव्यमान सौरमंडल के सभी ग्रहों का 71% एवं आयतन (Volume) उनका डेढ़ गुना है ।</p>
+<p> 6. बृहस्पति को सौरमंडल का <big>वेक्यूम क्लीनर </big> कहा जाता है। </p>
+<p> 7. यह सूर्य की परिक्रमा (orbit)  में 11.9 वर्ष लगाता है. </p>
+<p> 8. इसकी अपनी रेडियो उर्जा (radio energy) है। </p>
+<p> 9. इसके 79 उपग्रह (satellites) हैं। </p>
+</font>
+</div>
+
+<div id="shani" class="content">
+	</br>
+	<h2> <font color="silver"><center> 6. शनि (SATURN)</center></font> </h2>
+<center><img src="images/shani.png" width="400" height="300"></center>
+<br><br>
+
+ <font color="grey"> <p> <b>शनि को कभी-कभी “सौर मंडल का गहना” कहा जाता है। यह सूर्य से छठा ग्रह है और बृहस्पति के बाद सबसे बड़ा ग्रह है। यह एक ग्रह है जो हमारे अपने जैसा नहीं है मनुष्य एक लंबे समय से शनि ग्रह को देखता आ रहा है, इसके छल्ले और इसका आकार हजारों वर्षों से मानवों को आकर्षित करता रहा है।  </b></p>
+ 	<p> <b>  यह ग्रह अत्यधिक ठंडा है इसका तापमान लगभग -180 डिग्री सेल्सियस है। शनि का धरातल सैकड़ों संकीर्ण विलायों (rings) से घिरा हुआ है। </b></p>
+</font>
+
+</br>
+<font color="grey"> <p> <b> #Special Points </b></p>
+
+<p> 1. शनि नग्न आखों से दिखाई देने वाला अंतिम ग्रह है। </p> 
+<p> 2. इस ग्रह के 63 उपग्रह हैं जिसमे से टाइटन (titan) शनि का सबसे बड़ा उपग्रह है। </p>
+<p> 3. टाइटन सौरमंडल का एकमात्र ऐसा उपग्रह है जिसके पास स्वयं का स्थायी वायुमंडल है। </p>
+<p> 4. शनि सूर्य की परिक्रमा 29.5 वर्ष में करता है। </p>
+<p> 5. शनि को <big> ग्लोब ऑफ गैसेस </big> भी कहा जाता है। </p>
+<p> 6. शनि ग्रह का घनत्‍व पानी से कम होता है (#Fact इसका मतलब है अगर आप शनि ग्रह को पानी के एक बड़े से टब में डाल देंगे तो यह तैरने लगेगा।) </p>
+<p> 7. शनि का गुरुत्वबल 10.44 m/s2 है </p>
+</font>
+</div>
+
+
+<div id="arun" class="content">
+	</br>
+	<h2> <font color="silver"><center> 7. अरुण (URANUS)</center></font> </h2>
+<center><img src="images/arun.jpg" width="400" height="300"></center>
+<br><br>
+
+ <font color="grey"> <p> <b> युरेनस सूर्य का सांतवा तथा तीसरा सबसे बड़ा (व्यास से) ग्रह है। युरेनस नेपच्युन(वरुण) से आकार मे बड़ा लेकिन द्रव्यमान से छोटा है। द्रव्यमान में यह पृथ्वी से 14.5 गुना अधिक भारी और अकार में पृथ्वी से 63 गुना अधिक बड़ा है। युरेनस मुख्यतः चट्टान और विभिन्न तरह की बर्फ से बना है जिसमे 15% हायड्रोजन और थोड़ी हीलीयम है।</b></p>
+
+<p> <b> युरेनस आधिनिक काल मे खोजा जाने वाला पहला ग्रह है जिसे विलियम हर्शेल ने 13 मार्च 1781 को अपनी दूरबीन से खोजा था। युरेनस का <font color="blue"> निला रंग </font> उसके वातावरण मे उपरी भाग मे स्थित मिथेन द्वारा  <font color="red">लाल रंग </font>के अवशोषण के कारण है। बृहस्पति के जैसे विभिन्न रंगो के पट्टे मौजूद हो सकते है लेकिन वे उपरी वातावरण मे मौजूद मिथेन द्वारा ढंके हुये है।</b></p></font>
+
+
+</br>
+<font color="grey"> <p> <b> #Special Points </b></p>
+
+<p> 1. अरुण की त्रिज्या – 25,362 कि.मी. है ।</p>
+<p> 2. अरुण के उपग्रहो की सँख्या 27 है ।</p>
+<p> 3. अरुण द्वारा सूर्य की परिक्रमा पूर्ण करने में 84 वर्ष का समय लगता है। </p>
+<p> 4. इसके वायुमंडल में मिथेन गैस (methane gas) हैं ।</p>
+<p> 5. अरुण का गुरुत्व बल 8.87 m/s2 है। </p>
+<p> 6. इसके चारों और पाँच बहुत धुँधले वलय (Rings) अल्फ़ा (Alpha), बीटा (Beta), गामा (Gamma), डेल्टा (delta) और इप्सिलान (Epsilon) के हैं। </p>
+<p> 7. वायेजर 2 ही एकमात्र ऐसा अंतरिक्ष यान है जो अब तक अरुण ग्रह के करीब पहुँचा है। </p>
+</font>
+
+
+<div id="varun" class="content">
+	</br>
+	<h2> <font color="silver"><center> 8. वरुण (NEPTUNE)</center></font> </h2>
+<center><img src="images/varun.jpg" width="390" height="400"></center>
+<br><br>
+
+
+ <font color="grey"> <p> <b> वरुण का द्रव्यमान पृथ्वी से 17 गुना अधिक है और अपने पड़ौसी ग्रह अरुण (युरेनस) से थोड़ा अधिक है। नेपच्यून को पहली बार 1846 में खोजा गया था । इस ग्रह को <big> Jean Joseph Le Verrier </big>ने खोजा था ।</b></p>
+ 	<p> <b> Neptune Planet जिसे हिंदी में वरुण ग्रह के नाम से भी जाना जाता है, सौरमंडल के ग्रहो की श्रखला में अंतिम ग्रह है । इस ग्रह को सौरमंडल का सबसे ठंडा ग्रह भी कहाँ जाता है। इस ग्रह का तापमान करीब -200 डिग्री सेल्सियस रहता है।</b></p>
+</font>
+
+</br>
+<font color="grey"> <p> <b> #Special Points </b></p>
+<p> 1. वरुण द्वारा सूर्य की परिक्रमा पूर्ण करने में 165 वर्ष समय लगता है </p>
+<p> 2. वरुण का गुरुत्वबल 11.15 m/s2 है </p>
+<p> 3. यह सौरमंडल का तीसरा पिंड (third body) है, जहाँ जागृत ज्वालामुखी (active volcano) पाया गया है </p>
+<p> 4. वरुण की त्रिज्या –24622कि.मी. है </p>
+<p> 5. वरुण के उपग्रहो की सँख्या 14 है </p>
+<p> 6. वरुण द्वारा अपनी धूरी पर घूमने में 16 घन्टा, 6 मिनट का समय लगता है अतः एक दिन का समय 16 घन्टा, 6 मिनट का होता है </p>
+
+</font></div>
+<div class="content"> <h2> <center>Conclusion </center> </h2>
+ <center><img src="https://www.thoughtco.com/thmb/f5nOqM1DFHeOmd78BnOErkCznpY=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/solar-system-439046_1920-be1042fd410b4878b66848659193859d.jpg" width="400" height="400" ></center>
+
+ <font color="grey"> 
+
+ 	<center> <big><p> <b> for a quick revision <a href="planet.html">CLICK HERE </a> </b></p></big></center>
+ 	<div id="particles-js"></div>
+<div class="footer">
+                    <p> <b> <font color="silver"> In last I just want to add this is my one more  open source contribution to the community if you also wanna contribute and make this project more efficient you can contact me <a href="https://www.instagram.com/_sidjoshi_/">here</a><p> <b> कृपया अपना महत्वपूर्ण feedback जरूर दे और कोई त्रुटि रह गयी हो तो भी सुधार करवाये !!! </b></p></b></p></font>
+                    <p class="footer-company-name">A Project by  <a href="https://thedr34mb0y.github.io/">Sid Joshi❤️ </a>
+                 </div>
+            </div>
+        </div><!-- end container -->
+    </div><!-- end copyrights -->
+<div id="particles-js"></div>
+<div id="head">
+	
+</div>
+<!-- All Right Reserved to Sid Joshi --> 	
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+<script src="js/particles-script.js"></script>
+</html>                            
