@@ -938,6 +938,10 @@ body {
   background-image:url('https://www.holidify.com/images/cmsuploads/compressed/shutterstock_694433434_20191213110339_20191213110412.png');
 }
 
+.container-infos .right-side .comment-container .comment-card .comment-img.commentimg-6 {
+  background-image:url('https://www.pandotrip.com/wp-content/uploads/2014/09/Lotus-Tmple-Photo-by-Arpan-Das-980x614.jpg');
+}
+
 .credits {
   display:-webkit-box;
   display:-ms-flexbox;
